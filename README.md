@@ -1,1 +1,29 @@
-# College-project
+EduCentral — Next-Gen Student Portal & Campus Management System
+
+EduCentral is a robust, full-stack web application developed to modernize campus workflows, streamline student-faculty interactions, and manage academic resources in real time. Built with performance, security, and scalability in mind, it leverages Next.js (App Router) for fast SSR rendering, Supabase for PostgreSQL data management, and Tailwind CSS for an intuitive, responsive user interface.
+
+🚀 Key Features
+
+🔐 1. Production-Grade Authentication & Authorization
+
+Real-time Email Verification: Powered by SMTP integration, ensuring verified student access.
+
+Role-Based Access Control (RBAC): Granular permissions for Students, Faculty, and Administrators.
+
+Protected Routes: Next.js Middleware guarding internal student dashboard routes.
+
+📚 2. Student Portal & Academic Dashboard
+
+Course & Attendance Tracking: Live statistics for active courses and attendance percentages.
+
+Resource Sharing Hub: Centralized platform for downloading notes, lecture PDFs, and syllabus guides.
+
+Real-Time Notifications: Instant updates on announcements, deadlines, and grade releases.
+
+🛠️ 3. Backend & Cloud Storage
+
+PostgreSQL Database: Relational data structures optimized for fast query execution and strict data integrity.
+
+Supabase Storage Buckets: Secure file uploads for student assignment submissions and profile avatars.
+
+Automated Email Workflows: Triggered email notifications for password resets, signups, and alerts.
