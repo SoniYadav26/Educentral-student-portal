@@ -1,21 +1,19 @@
 EduCentral — Next-Gen Student Portal & Campus Management System
 
-Project Objective
-
+Project Objective:
 The main objective of EduCentral is to modernize and streamline campus academic workflows into a unified digital platform. It provides students, faculty, and administrators with a secure, real-time interface to manage course enrollments, track attendance metrics, share lecture materials, and access institutional announcements seamlessly.
+
+## Dashboard
+
+<img width="1312" height="733" alt="dashboard-overview" src=""/>
 
 Technical Implementation & Tools Used
 
 Frontend Framework: Next.js 14+ (React, App Router Architecture)
-
 Styling & UI Components: Tailwind CSS, Lucide React Icons
-
 Backend Services & Database: Supabase, PostgreSQL Database
-
 Authentication & Security: Supabase Auth with Custom Gmail SMTP Gateway, Protected Middleware Routes
-
 Cloud Storage: Supabase Storage Buckets (For syllabus PDFs, lecture notes, and submissions)
-
 Deployment & CI/CD: Vercel Hosting Pipeline
 
 Key Features
