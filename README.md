@@ -5,7 +5,15 @@ The main objective of EduCentral is to modernize and streamline campus academic 
 
 ## Dashboard
 
-<img width="1312" height="733" alt="dashboard-overview" src=""/>
+<img width="1312" height="733" alt="dashboard-overview" src="https://github.com/SoniYadav26/Educentral-student-portal/blob/main/dashboard-overview.png"/>
+
+## Course Section 
+
+<img width="1312" height="733" alt="dashboard-overview" src="https://github.com/SoniYadav26/Educentral-student-portal/blob/main/course-attendance.png"/>
+
+## Resource/Notes 
+
+<img width="1312" height="733" alt="dashboard-overview" src="https://github.com/SoniYadav26/Educentral-student-portal/blob/main/resource-hub.png"/>
 
 Technical Implementation & Tools Used
 
