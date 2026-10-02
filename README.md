@@ -1,45 +1,59 @@
 EduCentral — Next-Gen Student Portal & Campus Management System
 
-EduCentral is a robust, full-stack web application developed to modernize campus workflows, streamline student-faculty interactions, and manage academic resources in real time. Built with performance, security, and scalability in mind, it leverages Next.js (App Router) for fast SSR rendering, Supabase for PostgreSQL data management, and Tailwind CSS for an intuitive, responsive user interface.
+Project Objective
 
+The main objective of EduCentral is to modernize and streamline campus academic workflows into a unified digital platform. It provides students, faculty, and administrators with a secure, real-time interface to manage course enrollments, track attendance metrics, share lecture materials, and access institutional announcements seamlessly.
 
-🚀 Key Features
+Technical Implementation & Tools Used
 
- 1. Production-Grade Authentication & Authorization
+Frontend Framework: Next.js 14+ (React, App Router Architecture)
 
-Real-time Email Verification: Powered by SMTP integration, ensuring verified student access.
+Styling & UI Components: Tailwind CSS, Lucide React Icons
 
-Role-Based Access Control (RBAC): Granular permissions for Students, Faculty, and Administrators.
+Backend Services & Database: Supabase, PostgreSQL Database
 
-Protected Routes: Next.js Middleware guarding internal student dashboard routes.
+Authentication & Security: Supabase Auth with Custom Gmail SMTP Gateway, Protected Middleware Routes
 
- 2. Student Portal & Academic Dashboard
+Cloud Storage: Supabase Storage Buckets (For syllabus PDFs, lecture notes, and submissions)
 
-Course & Attendance Tracking: Live statistics for active courses and attendance percentages.
+Deployment & CI/CD: Vercel Hosting Pipeline
 
-Resource Sharing Hub: Centralized platform for downloading notes, lecture PDFs, and syllabus guides.
+Key Features
 
-Real-Time Notifications: Instant updates on announcements, deadlines, and grade releases.
+1. Security & Authentication
 
- 3. Backend & Cloud Storage
+Custom SMTP Email Verification: Ensures only verified student email addresses can activate accounts.
+Role-Based Access Control (RBAC): Distinct permissions and UI views for Students, Faculty, and Administrators.
+Route Protection: Next.js server-side middleware guarding private dashboard pages.
 
-PostgreSQL Database: Relational data structures optimized for fast query execution and strict data integrity.
+2. Student Dashboard & Academic Tools
 
-Supabase Storage Buckets: Secure file uploads for student assignment submissions and profile avatars.
+Live Attendance & Analytics: Visual indicators and statistical breakdowns for active courses.
+Centralized Resource Hub: Real-time download access for course syllabus, study guides, and assignments.
+Campus Broadcasts: Instant notification feed for deadlines, exam schedules, and department notices.
 
-Automated Email Workflows: Triggered email notifications for password resets, signups, and alerts.
+3. Data & Cloud Management
 
-🛠️ Tech Stack & ArchitectureLayerTechnology UsedFrontend FrameworkNext.js 14+ (React, App Router)Styling & UITailwind CSS + Lucide React IconsBackend & DatabaseSupabase (PostgreSQL)AuthenticationSupabase Auth (Custom SMTP Gateway)File StorageSupabase Storage BucketsDeploymentVercel (CI/CD Pipeline)📸 Dashboard PreviewAdd your application screenshots here after deployment.Student DashboardCourse View![Dashboard Screen](./public/dashboard-preview.png)![Course Screen](./public/courses-preview.png)
+Normalized Relational Schema: Built on PostgreSQL for strict data integrity and high performance.
+Secure Asset Storage: Automated bucket storage handling user profile avatars and downloadable documents.
 
+Database Architecture
 
-📊 Database Architecture
+The system utilizes normalized relational tables configured inside Supabase PostgreSQL:
 
-The system uses normalized relational tables inside Supabase PostgreSQL:
+profiles: Stores student and faculty metadata linked directly to system authentication accounts.
+courses: Stores course codes, faculty assignments, schedule timings, and credits.
+enrollments: Maps student registrations, grade records, and active course statuses.
+attendance: Tracks daily student attendance percentages and session logs.
+announcements: Stores site-wide broadcast messages and administrative alerts.
 
-profiles: Stores student/faculty metadata linked to Supabase auth.users.
+Dashboard Preview
 
-courses: Manages course listings, instructors, and schedules.
+1. Main Student Dashboard
+Add your main home/dashboard screen here (./public/dashboard-overview.png)
 
-enrollments: Junction table mapping student enrollments and grades.
+2. Course & Attendance Analytics
+Add your course view or attendance page screenshot here (./public/course-attendance.png)
 
-announcements: Broadcast messages posted by institutional admins.
+3. Resource Hub & Document Access
+Add your lecture notes/resource sharing section screenshot here (./public/resource-hub.png)
