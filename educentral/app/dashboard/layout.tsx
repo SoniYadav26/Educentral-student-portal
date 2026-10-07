@@ -3,7 +3,7 @@
 import { ReactNode, useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { BookOpen, BookOpenCheck, FileText, Home, LogOut, MessageSquareText, Quote, UploadCloud } from "lucide-react";
+import { BookOpen, BookOpenCheck, FileText, Home, LogOut, MessageSquareText, Quote, Settings, UploadCloud } from "lucide-react";
 import type { User } from "@supabase/supabase-js";
 import { supabase } from "@/lib/supabase";
 
@@ -11,7 +11,8 @@ const navigation = [
   { label: "Home", href: "/dashboard", icon: Home },
   { label: "PYQs & Syllabus", href: "/dashboard/pyqs", icon: BookOpenCheck },
   { label: "Notes", href: "/dashboard/notes", icon: FileText },
-  { label: "Feedback", href: "/dashboard/feedback", icon: MessageSquareText },
+  { label: "FEEDBACK", href: "/dashboard/feedback", icon: MessageSquareText },
+  { label: "Settings", href: "/dashboard/settings", icon: Settings },
 ];
 
 const quotes = [
@@ -93,7 +94,10 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
             const active = pathname === href || (href !== "/dashboard" && pathname.startsWith(`${href}/`));
             return <Link key={href} href={href} className={active ? "side-link active" : "side-link"} aria-current={active ? "page" : undefined}><Icon size={17} /><span>{label}</span></Link>;
           })}
-          {role === "admin" && <Link href="/admin/upload" className={pathname.startsWith("/admin") ? "side-link active" : "side-link"} aria-current={pathname.startsWith("/admin") ? "page" : undefined}><UploadCloud size={17} /><span>Upload resources</span></Link>}
+          {role === "admin" && <>
+            <Link href="/dashboard/feedbacks" className={pathname === "/dashboard/feedbacks" ? "side-link active" : "side-link"} aria-current={pathname === "/dashboard/feedbacks" ? "page" : undefined}><MessageSquareText size={17} /><span>Feedbacks</span></Link>
+            <Link href="/admin/upload" className={pathname.startsWith("/admin/upload") ? "side-link active" : "side-link"} aria-current={pathname.startsWith("/admin/upload") ? "page" : undefined}><UploadCloud size={17} /><span>Upload resources</span></Link>
+          </>}
         </nav>
         <div className="sidebar-bottom">A little better, every day.</div>
       </aside>

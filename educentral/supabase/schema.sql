@@ -38,9 +38,33 @@ alter table public.resources
 create table if not exists public.feedback (
   id uuid primary key default gen_random_uuid(),
   user_id uuid not null references auth.users(id) on delete cascade,
+  user_name text,
+  user_email text,
+  rating integer not null default 5 constraint feedback_rating_range check (rating between 1 and 5),
   message text not null check (char_length(message) between 8 and 2000),
   created_at timestamptz not null default now()
 );
+
+alter table public.feedback add column if not exists user_name text;
+alter table public.feedback add column if not exists user_email text;
+alter table public.feedback add column if not exists rating integer not null default 5;
+update public.feedback set rating = 5 where rating is null;
+alter table public.feedback alter column rating set default 5;
+alter table public.feedback alter column rating set not null;
+
+do $$
+begin
+  if not exists (
+    select 1
+    from pg_constraint
+    where conname = 'feedback_rating_range'
+      and conrelid = 'public.feedback'::regclass
+  ) then
+    alter table public.feedback
+      add constraint feedback_rating_range check (rating between 1 and 5);
+  end if;
+end
+$$;
 
 alter table public.resources enable row level security;
 alter table public.feedback enable row level security;
@@ -62,6 +86,11 @@ drop policy if exists "Users can submit their own feedback" on public.feedback;
 create policy "Users can submit their own feedback"
   on public.feedback for insert to authenticated
   with check (auth.uid() = user_id);
+
+drop policy if exists "Admins can read feedback" on public.feedback;
+create policy "Admins can read feedback"
+  on public.feedback for select to authenticated
+  using ((auth.jwt() -> 'app_metadata' ->> 'role') = 'admin');
 
 insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
 values ('study-materials', 'study-materials', true, 20971520, array['application/pdf'])
