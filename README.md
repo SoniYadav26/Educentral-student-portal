@@ -1,6 +1,6 @@
 # EduCentral
 
-EduCentral is a student resource portal built with Next.js App Router, Tailwind CSS, and Supabase.
+EduCentral is a full-stack student resource portal designed to simplify and streamline academic resource management for college students and faculty.EduCentral is a student resource portal built with Next.js App Router, Tailwind CSS, and Supabase
 
 ## Features
 
@@ -11,6 +11,13 @@ EduCentral is a student resource portal built with Next.js App Router, Tailwind 
 
 ![Login Page](./educentral/public/dashboard-overview.png)
 
+## 💡 Why EduCentral?
+
+During college, students frequently face common management issues:
+- Study materials, lecture notes, and syllabi are scattered across disparate WhatsApp groups, emails, and cloud drives.
+- Class representatives and administrators struggle to organize files and enforce secure access control.
+- There is no central, structured place for students to voice feedback or requests regarding academic materials.
+  
 ## Local setup
 
 Add the following to `.env.local` (without spaces around `=`):
