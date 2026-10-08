@@ -9,7 +9,7 @@ EduCentral is a student resource portal built with Next.js App Router, Tailwind 
 - 📝 Student feedback system
 - 🎯 Row-level security with Supabase
 
-![Login Page](./public/dashboard-overview.png)
+![Login Page](./educentral/public/dashboard-overview.png)
 
 ## Local setup
 
@@ -30,10 +30,10 @@ npm run dev
 ## Screenshots
 
 ### Dashboard
-![Dashboard View](./public/course-attendance.png)
+![Dashboard View](./educentral/public/course-attendance.png)
 
 ### Resource Upload
-![Upload Interface](./public/resource-hub.png)
+![Upload Interface](./educentral/public/resource-hub.png)
 
 ## Administrator access
 
