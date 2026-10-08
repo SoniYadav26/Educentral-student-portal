@@ -134,7 +134,7 @@ a { color: inherit; text-decoration: none; }
 .upload-field { display: grid; gap: 7px; }
 .upload-field.full { grid-column: 1 / -1; }
 .upload-submit { min-width: 160px; margin-top: 20px; padding: 0 16px; }
-.feedback-form { max-width: 640px; padding: 22px; margin-top: 26px; display: grid; gap: 12px; border: 1px solid rgba(87, 137, 167, .3); border-radius: 10px; background: linear-gradient(145deg, rgba(11, 29, 51, .82), rgba(3, 12, 30, .9)); box-shadow: 0 12px 32px rgba(0, 0, 0, .15); backdrop-filter: blur(12px); }
+.feedback-form { max-width: 640px; padding: 22px; margin-top: 26px; display: grid; gap: 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--background); box-shadow: 0 12px 32px rgba(0, 0, 0, .15); backdrop-filter: blur(12px); }
 .feedback-form textarea { min-height: 150px; padding: 12px; resize: vertical; }
 .feedback-submit { width: fit-content; padding: 0 16px; }
 .feedback-form .primary-button { color: #03121d; background: #22d3ee; }
